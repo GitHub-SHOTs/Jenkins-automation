@@ -56,7 +56,7 @@ node {
 
   stage("Protect Master Branch") {
     if(env.branch_name && "${branch_name}" == "${master_branch}") {
-        withCredentials([string(credentialsId: '1cf07897-ad01-4e59-9975-617ea40cf111', variable: 'githubToken')]) {
+        withCredentials([string(credentialsId: 'Jenkins_Admin_PAT', variable: 'githubToken')]) {
           httpRequest(
               contentType: 'APPLICATION_JSON',
               consoleLogResponseBody: true,
